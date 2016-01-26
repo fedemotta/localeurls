@@ -52,7 +52,12 @@ class LocaleHttpRequest extends CHttpRequest
      * @var bool wether to redirect to the default language URL if no language specified
      */
     public $redirectDefault = false;
-
+    
+    /**
+     * @var string url to be redirected if redirectDefault is true
+     */
+    public $redirectDefaultTo = null;
+    
     /**
      * @var string pathInfo with language key removed
      */
@@ -149,7 +154,18 @@ class LocaleHttpRequest extends CHttpRequest
                     $language = $key;
                 }
 
-                if(($baseUrl = $this->getBaseUrl())==='') {
+                //using redirectTo url 
+                if ($language===$this->_defaultLanguage 
+                    && $this->redirectDefault 
+                    && $this->redirectDefaultTo !== null){
+                    if ($this->getRequestUri() !== $this->redirectDefaultTo){
+                        $this->redirect($this->redirectDefaultTo);
+                    }else{
+                        //no redirect, it should stay on this page
+                        return $this->_cleanPathInfo;
+                    }
+                //default language redirections
+                }else if(($baseUrl = $this->getBaseUrl())==='') {
                     $this->redirect('/'.$language.$this->getRequestUri());
                 } else {
                     $this->redirect(strtr($this->getRequestUri(), array($baseUrl => $baseUrl.'/'.$language)));
