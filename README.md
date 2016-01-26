@@ -53,6 +53,7 @@ return array(
             //'languageCookieLifetime'  => 31536000,
             //'persistLanguage'         => true,
             //'redirectDefault'         => false,
+            //'redirectDefaultTo'         => '/site/selector',
         ),
         // ...
     ),
@@ -114,6 +115,10 @@ a useful widget that creates a simple language selector.
  *  `redirectDefault`: Wether to also redirect the application's default language, i.e.
     from `www.example.com` to `www.example.com/en` if the main application language is `en`.
     Default is false.
+ *  `redirectDefaultTo`: If `redirectDefault` is true you can provide an url to always 
+    redirect the user to (and where you can encourage the user to select a valid language), i.e.
+    `/site/selector`.
+    Default is null.
 
 ### Methods
 
