@@ -1,7 +1,9 @@
 Locale URLs
 ===========
-
 Automatic locale/language management for URLs.
+
+
+**This is a fork of [mikehaertl/localeurls](http://github.com/mikehaertl/localeurls) repository, which is currently in manteinance mode. Latest release is 1.2 with     redirectDefaultTo param to encourage the selection of a valid language if the user never selected one before. You can       see this feature in action in [https://www.weegoo.com/](https://www.weegoo.com/).**
 
 This extension allows to use URLs that contain a language code like
 
