@@ -1,5 +1,5 @@
 {
-    "name": "femotta/localeurls",
+    "name": "fedemotta/localeurls",
     "description": "localeurls is a Yii extension for automatic locale/language management through URLs.",
     "keywords": ["yii","locale","language","url"],
     "homepage": "https://github.com/fedemotta/localeurls",
