@@ -1,5 +1,8 @@
 Locale URLs
 ===========
+
+[![Latest Stable Version](https://poser.pugx.org/fedemotta/localeurls/v/stable)](https://packagist.org/packages/fedemotta/localeurls) [![Total Downloads](https://poser.pugx.org/fedemotta/localeurls/downloads)](https://packagist.org/packages/fedemotta/localeurls) [![Latest Unstable Version](https://poser.pugx.org/fedemotta/localeurls/v/unstable)](https://packagist.org/packages/fedemotta/localeurls) [![License](https://poser.pugx.org/fedemotta/localeurls/license)](https://packagist.org/packages/fedemotta/localeurls)
+
 Automatic locale/language management for URLs.
 
 
