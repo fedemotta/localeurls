@@ -178,6 +178,11 @@ class LanguageSelector extends CWidget
 
 # Changelog
 
+### 1.2
+
+*   Updating this fork as a real long-term fork to upload to packagist
+*   redirectDefaultTo functionality
+
 ### 1.1.6
 
 *   Fix #8: URLs that contain the language code again are messed up
