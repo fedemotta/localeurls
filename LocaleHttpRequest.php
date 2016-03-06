@@ -57,7 +57,7 @@ class LocaleHttpRequest extends CHttpRequest
      * @var string url to be redirected if redirectDefault is true
      */
     public $redirectDefaultTo = null;
-    
+
     /**
      * @var string pathInfo with language key removed
      */
@@ -120,7 +120,7 @@ class LocaleHttpRequest extends CHttpRequest
                     if(!empty($queryString))
                         $url .= '?'.$queryString;
 
-                    $this->redirect($url);
+                    $this->redirect($url,true,301);
                 }
 
             } else {
@@ -153,22 +153,21 @@ class LocaleHttpRequest extends CHttpRequest
                 if ($key && is_string($key)) {
                     $language = $key;
                 }
-
                 //using redirectTo url 
                 if ($language===$this->_defaultLanguage 
                     && $this->redirectDefault 
                     && $this->redirectDefaultTo !== null){
                     if ($this->getRequestUri() !== $this->redirectDefaultTo){
-                        $this->redirect($this->redirectDefaultTo);
+                        $this->redirect($this->redirectDefaultTo,true,301);
                     }else{
                         //no redirect, it should stay on this page
                         return $this->_cleanPathInfo;
                     }
                 //default language redirections
                 }else if(($baseUrl = $this->getBaseUrl())==='') {
-                    $this->redirect('/'.$language.$this->getRequestUri());
+                    $this->redirect('/'.$language.$this->getRequestUri(),true,301);
                 } else {
-                    $this->redirect(strtr($this->getRequestUri(), array($baseUrl => $baseUrl.'/'.$language)));
+                    $this->redirect(strtr($this->getRequestUri(), array($baseUrl => $baseUrl.'/'.$language)),true,301);
                 }
             }
         }
